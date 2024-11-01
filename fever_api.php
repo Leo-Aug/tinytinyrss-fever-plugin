@@ -615,6 +615,8 @@ class FeverAPI extends Handler {
                     $line_content .= '</ul>';
                 }
             }
+
+            $line_content = DiskCache::rewrite_urls($line_content);
             
             array_push($items, array("id" => intval($line["id"]),
                                      "feed_id" => intval($line["feed_id"]),
